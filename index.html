@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 
-    <link rel="stylesheet" href="/styles/min/fullmat.css">
+    <!-- <link rel="stylesheet" href="/styles/min/fullmat.css"> -->
 
     <!-- <link type="text/css" rel="stylesheet" href="fullmat.css"  media="screen,projection"/> -->
 
@@ -18,15 +18,8 @@
 
   <body>
 
-<!--
-        <a onClick='addInputField()' class="waves-effect waves-light btn">Stuff</a>
-        <input type="text" id="type" value="value">
-
- -->
-
 
 <div class="valign-wrapper">
-
   <div class=" center-block">
    <blockquote style="border-color:lightgray" class="center-align valign-wrapper valign">
       <h3 class="valign center-align">Investigation Request Form</h3>
@@ -37,15 +30,13 @@
 
 <!-- form start -->
 
-
-
-     <div class="container">
+     <div id="container" class="container">
      <!-- container -->
 
         <div class="row">
           <div class="input-field col s4">
             <input placeholder="" type="text" class="validate">
-            <label>First Name / Last Name</label>
+            <label>Client First Name / Last Name</label>
           </div>
        <!--     <div class="input-field col s4">
             <input placeholder="" id="first_name" type="text" class="validate">
@@ -81,8 +72,8 @@
         </div>
 <!-- ************************************************************ -->
 
-        <div class="  row">
-        <div class="  col s1">
+        <div id="witItem" class="row">
+        <div class="col s1">
 
               <input type="checkbox" id="vic" />
               <label for="vic">vic</label>
@@ -153,14 +144,14 @@
                 <div class="  row">
                 <div class="  col s1">
 
-                      <input type="checkbox" id="vic1" />
-                      <label for="vic1">vic</label>
+                      <input type="checkbox" id="vic2" />
+                      <label for="vic2">vic</label>
 
-                      <input type="checkbox" id="wit1" />
-                      <label for="wit1">wit</label>
+                      <input type="checkbox" id="wit2" />
+                      <label for="wit2">wit</label>
 
-                      <input type="checkbox" id="officer1" />
-                      <label for="officer1">officer</label>
+                      <input type="checkbox" id="officer2" />
+                      <label for="officer2">officer</label>
                 </div>
 
                     <div class="input-field col s4 offset-s1">
@@ -184,43 +175,61 @@
                         </form>
                       </div>
 
-
     </div>
-    <footer>
-    </footer>
+<footer>
+<div class="row">
+  <div class="col  offset-s2">
+    <blockquote>
+      Add Witness
+      <br>
+    <!-- (Additional checkboxes arent working right now) -->
+    <br>
+      <a onClick='addInputField()' name="addwit" class="btn-floating btn-large waves-effect waves-light  red"><i id="addNew" class="material-icons">add</i></a>
+    </blockquote>
+
+
+ <a href="mailto:sbarrar@barrarlaw.com"><i class="material-icons right">send</i></a>
+
+  </div>
+</div>
+
+
+
+
+</footer>
+
   <script>
     function addInputField(){
 
-      // value = document.getElementById('type').value;
+      var witList = document.getElementById('witItem');
+      var newWit = witList.cloneNode(true)
+      var Box = document.getElementById('container')
+      var Button = document.getElementById('addNew')
+      Box.insertBefore(newWit,Box.addNew)
 
 
-      rowDiv = document.createElement('div');
-      rowDiv.className = "row";
-
-      newDiv = document.createElement('div');
-      newDiv.className = "input-field col s3";
-
-      newInput = document.createElement('input');
-      newInput.id="new_name";
-      newInput.type="text";
-      newInput.className="validate";
-
-      newLabel = document.createElement('label');
-      newLabel.setAttribute("for", "new_name");
-      // newLabel.innerHTML = value;
+      // Box.appendChild(newWit)
 
 
-      newDiv.appendChild(newInput);
-      newDiv.appendChild(newLabel);
-      rowDiv.appendChild(newDiv);
-      document.body.appendChild(rowDiv);
 
+      // // value = document.getElementById('type').value;
+      // rowDiv = document.createElement('div');
+      // rowDiv.className = "row";
+      // newDiv = document.createElement('div');
+      // newDiv.className = "input-field col s3";
+      // newInput = document.createElement('input');
+      // newInput.id="new_name";
+      // newInput.type="text";
+      // newInput.className="validate";
+      // newLabel = document.createElement('label');
+      // newLabel.setAttribute("for", "new_name");
+      // // newLabel.innerHTML = value;
+      // newDiv.appendChild(newInput);
+      // newDiv.appendChild(newLabel);
+      // rowDiv.appendChild(newDiv);
+      // document.body.appendChild(rowDiv);
     }
-
   </script>
-
-
-
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
